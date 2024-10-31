@@ -1,3 +1,13 @@
+/* Color Variables */
+:root {
+    --primary-color: #4a90e2; /* Header and accent color */
+    --secondary-color: #1e88e5; /* Button and icon color */
+    --background-light: #f4f4f4; /* Light grey background */
+    --background-dark: #33475b; /* Footer background color */
+    --text-light: #ffffff;
+    --text-dark: #333;
+}
+
 /* Reset default styles */
 * {
     margin: 0;
@@ -11,30 +21,82 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9fafa; /* Light background */
-    color: #333;
+    background-color: var(--background-light);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
-/* Header with Soft Gradient Background */
-header {
-    background: linear-gradient(135deg, #4a90e2, #50a7c2);
-    color: #fff;
+/* Header and Footer Styling */
+header, footer {
+    color: var(--text-light);
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2rem;
 }
 
+header {
+    background: linear-gradient(135deg, var(--primary-color), #50a7c2);
+    padding-top: 70px;
+}
+
+/* Animation for Header Text */
 header h1 {
     font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease;
 }
 
-header p {
-    font-size: 1.2rem;
-    font-weight: 300;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+
+footer {
+    background-color: var(--background-dark);
+}
+
+/* Updated Navigation Bar Styling */
+nav {
+    background-color: #357ABD; /* Slightly darker blue for distinction */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed; /* Fix navigation at the top */
+    width: 100%; 
+    z-index: 1000;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: #fff; /* White text for contrast */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #4ac3f2; /* Highlight background on hover */
+    color: #fff; /* Keep text white */
+}
+
+
+/* Section Styling */
 section {
     padding: 2rem;
     max-width: 800px;
@@ -42,10 +104,10 @@ section {
 }
 
 h2 {
-    color: #4a90e2;
+    color: var(--primary-color);
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #4a90e2;
+    border-bottom: 2px solid var(--primary-color);
     display: inline-block;
 }
 
@@ -57,18 +119,18 @@ h2 {
 
 /* Skills Section with Icons */
 #skills ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 1rem;
+    justify-content: center;
 }
 
 #skills li {
-    background-color: #e3f2fd; /* Light blue background */
-    color: #1e88e5; /* Darker blue text */
+    background-color: var(--background-light);
+    color: var(--secondary-color);
     padding: 0.6rem 1rem;
     border-radius: 8px;
-    font-weight: 500;
     display: flex;
     align-items: center;
 }
@@ -79,9 +141,9 @@ h2 {
     margin-right: 8px;
 }
 
-/* Project Cards with Hover Effects */
-.project {
-    background-color: #ffffff;
+/* Project Cards */
+.project-card {
+    background-color: var(--text-light);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -89,14 +151,14 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-.project:hover {
+.project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.project h3 {
+.project-card h3 {
     font-size: 1.4rem;
-    color: #4a90e2;
+    color: var(--primary-color);
 }
 
 /* Contact Form */
@@ -106,39 +168,30 @@ h2 {
     gap: 1rem;
 }
 
-#contact input, #contact textarea, #contact button {
-    padding: 0.8rem;
-    border-radius: 5px;
+#contact input, #contact textarea {
     border: 1px solid #dfe4ea;
-    font-family: inherit;
+    border-radius: 5px;
+    padding: 0.8rem;
+    background-color: #f3f7fa;
     font-size: 1rem;
 }
 
-#contact input, #contact textarea {
-    background-color: #f3f7fa;
-}
-
 #contact button {
-    background-color: #1e88e5;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
     font-weight: 500;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 #contact button:hover {
     background-color: #1565c0;
-    transform: scale(1.03);
 }
 
-/* Footer with Social Links */
-footer {
-    background-color: #33475b;
-    color: #ffffff;
-    padding: 1.5rem;
-    text-align: center;
-}
-
+/* Footer Links */
 footer a {
     color: #4ac3f2;
     text-decoration: none;
