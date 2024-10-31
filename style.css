@@ -55,26 +55,44 @@ header h1 {
     }
 }
 
-
 footer {
     background-color: var(--background-dark);
 }
 
-/* Updated Navigation Bar Styling */
-nav {
-    background-color: #357ABD; /* Slightly darker blue for distinction */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed; /* Fix navigation at the top */
-    width: 100%; 
-    z-index: 1000;
+/* Updated Navigation Bar Styling with Hide on Idle */
+#navbar {
+    position: fixed;
+    width: 100%;
     top: 0;
+    background-color: var(--primary-color); /* Use primary color for consistency */
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease; /* Smooth fade-in/fade-out */
+    opacity: 1; /* Default state for initial-visible */
+    z-index: 1000;
 }
 
+/* Initially show navbar */
+.initial-visible {
+    opacity: 1; /* Navbar is visible at the start */
+}
+
+/* Hide navbar when not hovered */
+#navbar:not(:hover) {
+    opacity: 0; /* Navbar becomes invisible when not hovered */
+}
+
+/* Show navbar on hover */
+#navbar:hover {
+    opacity: 1; /* Navbar appears fully on hover */
+}
+
+/* Navbar Items Styling */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 0;
 }
 
 nav li {
@@ -82,19 +100,18 @@ nav li {
 }
 
 nav a {
-    color: #fff; /* White text for contrast */
+    color: var(--text-light); /* Consistent color for contrast */
     font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease, background-color 0.3s ease;
     padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
     border-radius: 5px;
 }
 
 nav a:hover {
     background-color: #4ac3f2; /* Highlight background on hover */
-    color: #fff; /* Keep text white */
+    color: var(--text-light);
 }
-
 
 /* Section Styling */
 section {
