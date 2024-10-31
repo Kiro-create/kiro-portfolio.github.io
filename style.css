@@ -1,0 +1,152 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafa; /* Light background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header with Soft Gradient Background */
+header {
+    background: linear-gradient(135deg, #4a90e2, #50a7c2);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #4a90e2;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #4a90e2;
+    display: inline-block;
+}
+
+/* About Section Styling */
+#about {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Skills Section with Icons */
+#skills ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+#skills li {
+    background-color: #e3f2fd; /* Light blue background */
+    color: #1e88e5; /* Darker blue text */
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+#skills li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Project Cards with Hover Effects */
+.project {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    font-size: 1.4rem;
+    color: #4a90e2;
+}
+
+/* Contact Form */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact input, #contact textarea, #contact button {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #dfe4ea;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#contact input, #contact textarea {
+    background-color: #f3f7fa;
+}
+
+#contact button {
+    background-color: #1e88e5;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact button:hover {
+    background-color: #1565c0;
+    transform: scale(1.03);
+}
+
+/* Footer with Social Links */
+footer {
+    background-color: #33475b;
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+footer a {
+    color: #4ac3f2;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #b2ebf2;
+    text-decoration: underline;
+}
